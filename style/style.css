@@ -1,24 +1,24 @@
 
-* {
-    box-sizing:border-box;
-}
-
-html body {
-    width:100%;
-}
-
-body {
+* { padding:0;
     margin:0;
+    box-sizing:border-box;
 }
 
 /* Меню сайта */
 
+nav {
+    width:100%;
+    position:absolute;
+    z-index:1;
+}
+
 .header_container {
+    margin:0;
+    list-style-type:none;
     background:rgba(0, 0, 0, 0.87);
     text-align:center;
     display:flex;
     justify-content:space-around;
-    transition:all 0.3s ease;
 }
 
 .header_item {
@@ -33,47 +33,56 @@ a {
     color:white;
     font-size:24px;
     font-family:'Open Sans', sans-serif;
-}
-
-a:hover {
-    background-color:rgb(209,209,209);
-    color:black;
     transition:all 0.3s ease;
 }
 
-a:active {
+.header_item a:hover {
+    background-color:rgb(209,209,209);
+    color:black;
+}
+
+.header_item a:active {
     background-color:rgb(248, 248, 248);
     color:black;
     text-decoration:underline;
-    transition:all 0.3s ease;
 }
 
 a.icon {
-    padding:0px 16px ;
+    margin:0;
+    transform:scaleX(1.8);
+    font-size:25px;
+    padding:0px 15px;
     display:none;
 }
 
-.header_item .sub_menu a{
+.sub_menu {
+    list-style-type:none;
+}
+
+.header_item .sub_menu a {
+    line-height:36px;
     display:none;
+    font-size:18px;
     color:black;
     background-color:#F2F2F2;
-    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25)   
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .header_item .sub_menu a:hover {
     background-color:#D1D1D1;
+    height:36px;
     color:black;
     transition:all 0.3s ease;
 }
 
 .header_item .sub_menu a:active {
     background-color:#717171;
-    color:black;
+    color:white;
     text-decoration:none;
     transition:all 0.3s ease;
 }
 
-.header_container .header_item:hover > .sub_menu a{
+.header_container .header_item:hover > .sub_menu a {
     display:block;
     transition:all 0.3s ease;
 }
@@ -85,13 +94,12 @@ a.icon {
 
 .header_container .header_item a:hover:not(:only-child):after {
     color:black;
-    content:' ▾';
 }  
   
                 /* Фон сайта */
 
 header {
-    height:747px;
+    height:764px;
     width:auto;
     background-image:url(../images/background\ 1.png);
     background-attachment:scroll;
@@ -101,11 +109,13 @@ header {
 }
 
 .header_text {
-    margin-top:100px;
-    font-size:8vw;
+    padding-top:300px;
+    width:100%;
     display:flex;
-    justify-content:space-around;
-    background-color;
+    justify-content:center;
+    position:absolute;
+    font-size:8vw;
+    text-align:center;
     font-family:'Open Sans', sans-serif;
     
 }
@@ -120,6 +130,7 @@ header {
  /* Блоки сайта */
 
 .flex_container {
+    margin:60px;
     display:flex;
     flex-direction:row;
     justify-content:center;
@@ -127,20 +138,17 @@ header {
 }
 
 .flex {
+    margin:50px 50px;
     justify-content:space-between;
-    padding:50px;
-}
-
-.flex_item {
     font-family:'Open Sans', sans-serif;
-    padding:0;
     background-color:white;
     border-radius:24px 0px 24px 0px;
     box-shadow:0px 1px 5px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.14);    
     transition:all 0.3s ease;
 }
 
-.flex_item:hover {
+.flex:hover {
+    transform:scale(1.1);
     font-family:'Open Sans', sans-serif;
     background-color:white;
     border-radius:24px 0px 24px 0px;
@@ -149,17 +157,19 @@ header {
 }
 
 
-.flex_item h2 {
+.flex h2 {
+    margin-top:-5px;
+    padding:10PX;
     font-size:24px;
-    padding-top:16px;
-    padding-left:10px;
+    padding-left:16px;
 }
 
-.flex_item p {
-   font-size:12px;
-   padding-left:10px;
-   padding-bottom:16px; 
-   color:rgba(0, 0, 0, 0.54);
+.flex p {
+    margin-top:-25PX;
+    padding:15PX;
+    font-size:12px;
+    padding-left:16px;
+    color:rgba(0, 0, 0, 0.54);
 }
 
                 /* Подвал сайта */
@@ -180,7 +190,7 @@ header {
     color:white;
     order:2;
     text-align:center;
-    padding-right:24px ;
+    padding-right:24px;
 }
 
 .footer address {
@@ -193,8 +203,9 @@ header {
                 /* Экран для телефона */
 
 @media screen and (max-width: 768px) {
+    
     a:not(:nth-child(4)) {
-    display:none ;
+        display:none;
     }
 
     .header_item .sub_menu {
@@ -202,11 +213,36 @@ header {
     }
 
     a.icon {
-    text-decoration:none;
-    display: block;
+        display:block;
+        
     }
+
+    header {
+        height:464px;
+        width:auto;
+        background-image:url(../images/background\ 1.png);
+        background-attachment:scroll;
+        background-size:cover;
+        background-position:center;
+        box-shadow:0px 1px 5px rgba(0, 0, 0, 1);
+    }
+
+    
 }
 
+@media screen and (max-width: 1024px) {
+    
+    header {
+        height:600px;
+        width:auto;
+        background-image:url(../images/background\ 1.png);
+        background-attachment:scroll;
+        background-size:cover;
+        background-position:center;
+        box-shadow:0px 1px 5px rgba(0, 0, 0, 1);
+    }
+
+} 
 
 
 
